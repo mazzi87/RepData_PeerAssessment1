@@ -29,7 +29,7 @@ int_max <- daily_intervals$intervals[ind]
 
 ## What is mean total number of steps taken per day?
 
-1. The total number of steps taken per day is:
+- The total number of steps taken per day is:
 
 ```r
 print(daily_steps)
@@ -100,7 +100,7 @@ print(daily_steps)
 ## 61 2012-11-30     0
 ```
 
-2. Histogram of the total number of steps taken each day:
+- Histogram of the total number of steps taken each day:
 
 
 ```r
@@ -110,7 +110,7 @@ hist(daily_steps$steps, xlab = "Daily steps", main = "Histogram of daily steps",
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
-3. Here are the mean and median of the total number of steps taken per day:
+- Here are the mean and median of the total number of steps taken per day:
 
 
 ```r
@@ -125,7 +125,7 @@ c("mean" = mean(daily_steps$steps, na.rm = TRUE),
 
 ## What is the average daily activity pattern?
 
-1. This is the time series plot of the 5-minute interval and the average number of steps taken, averaged across all days:
+- This is the time series plot of the 5-minute interval and the average number of steps taken, averaged across all days:
 
 
 ```r
@@ -136,11 +136,11 @@ plot(x = daily_intervals$intervals, y = daily_intervals$avg_steps, type = "l",
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 
-2. The maximum number of steps is obtained at the 835 5-minute interval.
+- The maximum number of steps is obtained at the 835 5-minute interval.
 
 ## Imputing missing values
 
-1.  The total number of missing values in the dataset is:
+-  The total number of missing values in the dataset is:
 
 
 ```r
@@ -152,9 +152,9 @@ print(NAs)
 ## [1] 2304
 ```
 
-2. I am going to replace the NAs values in the dataset with the median value for the corresponding 5-minute interval
+- I am going to replace the NAs values in the dataset with the median value for the corresponding 5-minute interval
 
-3. This is the code to create the new dataset, which I called activity_mod:
+- This is the code to create the new dataset, which I called activity_mod:
 
 
 ```r
@@ -174,7 +174,7 @@ ind3 <- match(activity_mod$interval[ind2], interval_median$interval)
 activity_mod$steps[ind2] <-  interval_median$median[ind3]
 ```
 
-4. This is the histogram of the total number of steps taken each day with the new dataset:
+- This is the histogram of the total number of steps taken each day with the new dataset:
 
 
 ```r
