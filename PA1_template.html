@@ -394,18 +394,18 @@ Imputing missing data as I did lowers the mean, but not the median (as expected)
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
-<ol>
+<ul>
 <li>This is the new factor I created:</li>
-</ol>
+</ul>
 
 <pre><code class="r">wdays &lt;- c(&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;)
 activity_mod$day &lt;- factor(weekdays(as.Date(activity_mod$date, format = &quot;%Y-%m-%d&quot;))
                            %in% wdays,levels=c(FALSE, TRUE), labels=c(&#39;weekend&#39;, &#39;weekday&#39;))
 </code></pre>
 
-<ol>
+<ul>
 <li>This is the time series plot of the 5-minute interval and the average number of steps taken, averaged across all weekday days or weekend days:</li>
-</ol>
+</ul>
 
 <pre><code class="r">daily_intervals_mod &lt;- aggregate(activity_mod$steps,
                                  by=list(activity_mod$interval,activity_mod$day),
